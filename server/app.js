@@ -9,12 +9,14 @@ const app = express();
 const data = require('./glossary.json')
 
 
-app.get('/glossary/', ((req, res)=>{
+app.get('/glossary/', ((req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.json(data)
 }));
 
 
 app.get('/map/', ((req, res)=>{
+    res.setHeader('Access-Control-Allow-Origin', '*')
     res.sendFile(__dirname + '/glossary.png');
 }));
 
